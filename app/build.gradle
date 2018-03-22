@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.ramiara.top14client"
+        applicationId "com.ppe_plot3.fredimobile"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

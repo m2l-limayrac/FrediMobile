@@ -1,4 +1,4 @@
-package com.ramiara.top14client;
+package com.ppe_plot3.fredimobile;
 
 import org.junit.Test;
 

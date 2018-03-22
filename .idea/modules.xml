@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E:\PRO\Cours_2eme_Annee\SLAM-4-(RAMIARA)\Exo\top14client\Top14client.iml" filepath="E:\PRO\Cours_2eme_Annee\SLAM-4-(RAMIARA)\Exo\top14client\Top14client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FrediMobile.iml" filepath="$PROJECT_DIR$/FrediMobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\PRO\Cours_2eme_Annee\SLAM-4-(RAMIARA)\Exo\top14client\app\app.iml" filepath="E:\PRO\Cours_2eme_Annee\SLAM-4-(RAMIARA)\Exo\top14client\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/top14client.iml" filepath="$PROJECT_DIR$/top14client.iml" />
     </modules>
   </component>
 </project>
