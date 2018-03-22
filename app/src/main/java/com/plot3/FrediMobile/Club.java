@@ -4,50 +4,37 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 /**
  * Classe métier d'un club
  * Décrit les données d'un club
  */
-public class Club {
+public class NoteDeFrais {
 
     /**
-     * ID du club
+     * ID de la note de frais
      */
-    public int id;
+    public int Id_NoteDeFrais;
     /**
-     * Nom du club
+     * boolean de la note de frais
      */
-    public String nom;
+    public boolean isValidate;
     /**
-     * Couleurs du club
+     * Collection des lignes de frais
      */
-    public String couleurs;
-    /**
-     * Stade du club
-     */
-    public String stade;
-    /**
-     * nom du fichier contenant une image de l'écusson
-     */
-    public String fichierEcusson;
-    /**
-     * Classement dans le TOP 14
-     */
-    public int classement;
+    public ArrayList<> lesLignes;
 
     /**
      * Constructeur
      * Construit un objet à partir d'un JSONObject
      * @param jsonObject
      */
-    public Club(JSONObject jsonObject) {
+    public NoteDeFrais(JSONObject jsonObject) {
         try {
-            id = jsonObject.getInt("id");
-            nom = jsonObject.getString("nom");
-            couleurs = jsonObject.getString("couleurs");
-            stade = jsonObject.getString("stade");
-            fichierEcusson = jsonObject.getString("ecusson");
-            classement = jsonObject.getInt("classement");
+            Id_NoteDeFrais = jsonObject.getInt("Id_NoteDeFrais");
+            isValidate = jsonObject.getBoolean("isValidate");
+            lesLignes = jsonObject.getJSONObject("lesLignes");
         } catch (JSONException e) {
             Log.d(MainActivity.LOG_TAG,"Erreur lors de la conversion de l'objet JSON en objet Club");
             e.printStackTrace();
@@ -60,12 +47,8 @@ public class Club {
      */
     public String[] toArray() {
         String data[] = {
-                Integer.toString(id),
-                nom,
-                couleurs,
-                stade,
-                fichierEcusson,
-                Integer.toString(classement)
+                Integer.toString(Id_NoteDeFrais),
+                Boolean.toString(isValidate)
         };
         return data;
     }

@@ -14,8 +14,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Votre code utilisateur"
-        android:inputType="textPersonName"
+        android:hint="email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
