@@ -1,4 +1,4 @@
-package com.ppe_plot3.fredimobile;
+package com.plot3.FrediMobile;
 
 import org.junit.Test;
 

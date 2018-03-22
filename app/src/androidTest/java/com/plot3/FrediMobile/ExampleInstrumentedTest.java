@@ -1,4 +1,4 @@
-package com.ppe_plot3.fredimobile;
+package com.plot3.FrediMobile;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.ppe_plot3.fredimobile", appContext.getPackageName());
+        assertEquals("com.plot3.FrediMobile", appContext.getPackageName());
     }
 }
