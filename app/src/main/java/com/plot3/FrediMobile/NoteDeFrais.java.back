@@ -23,7 +23,7 @@ public class NoteDeFrais {
     /**
      * Collection des lignes de frais
      */
-    public ArrayList<> lesLignes;
+    public ArrayList<LigneDeFrais> lesLignes;
 
     /**
      * Constructeur

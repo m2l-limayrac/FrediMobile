@@ -26,12 +26,12 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
     public static final String EXTRA_MESSAGE = "com.plot3.FrediMobile.MESSAGE";
 
     // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
-    String MyURL = "http://192.168.1.39/projets/top14server/clubs.php"; //changer l'ip par mon ip locale
+    String MyURL = "http://192.168.1.39/projets/top14server/lignes.php"; //changer l'ip par mon ip locale
     String MyUser = "jef";
     String MyPassword = "jefjef";
     ListView myListView;
     Context myContext;
-    ArrayList<Club> myClubs = new ArrayList<>();
+    ArrayList<LigneDeFrais> myLignes = new ArrayList<>();
     ArrayList<String> myArrayList = new ArrayList<>();
     Activity myActivity;
 
@@ -82,10 +82,10 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
                 JSONArray clubsArray = jsonObject.getJSONArray("clubs");
                 // Boucle de lecture des clubs
                 for (int i = 0; i < clubsArray.length(); i++) {
-                    JSONObject clubJsonObject = clubsArray.getJSONObject(i);
-                    Club club = new Club(clubJsonObject);
-                    myClubs.add(club);
-                    myArrayList.add(club.nom);
+                    JSONObject NDFJsonObject = clubsArray.getJSONObject(i);
+                    LigneDeFrais LDF = new LigneDeFrais(NDFJsonObject);
+                    myLignes.add(LDF);
+                    myArrayList.add(LDF.date);
                 }
 
             } catch (Exception e) {
@@ -108,8 +108,8 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                        Club myClub = myClubs.get(position);
-                        String myData[] = myClub.toArray();
+                        LigneDeFrais myLigne = myLignes.get(position);
+                        String myData[] = myLigne.toArray();
                         Intent myIntent = new Intent(myContext, DetailsActivity.class);
                         myIntent.putExtra(EXTRA_MESSAGE, myData);
                         myActivity.startActivity(myIntent);
