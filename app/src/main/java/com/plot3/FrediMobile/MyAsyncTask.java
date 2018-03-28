@@ -54,8 +54,7 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
      * @return Chaîne JSON
      */
     @Override
-    protected String
-    (Void... voids) {
+    protected String doInBackground(Void... voids) {
         String url = MyURL + "?user=" + MyUser + "&password=" + MyPassword;
         Log.d(MainActivity.LOG_TAG, "URL=" + url);
         // Accède à Internet, consomme un service Web en RESTful et renvoie un contenu JSON
