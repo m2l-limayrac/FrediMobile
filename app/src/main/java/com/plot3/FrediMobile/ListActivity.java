@@ -5,6 +5,7 @@ package com.plot3.FrediMobile;
 // Liste des clubs
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -32,6 +33,12 @@ public class ListActivity extends AppCompatActivity {
         // Récupère la listView
         myListView = findViewById(R.id.lv_liste);
 
+        Intent intent = getIntent();
+        String chaine = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
+        String[] data = chaine.split("/");
+        String user = data[0];
+        String mdp = data[1];
+
         // Récupère des infos sur l'état de la connexion Internet
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -40,7 +47,7 @@ public class ListActivity extends AppCompatActivity {
         if (networkInfo != null && networkInfo.isConnected() ) {
             Toast.makeText(getApplicationContext(), "Connexion en cours ...", Toast.LENGTH_LONG).show();
             // Lance la tâche asynchrone
-            new MyAsyncTask(myListView,this).execute();
+            new MyAsyncTask(myListView,this, user, mdp).execute();
         } else {
             // Message d'erreur général
             Toast.makeText(getApplicationContext(), "Erreur : pas de connexion Internet !", Toast.LENGTH_LONG).show();

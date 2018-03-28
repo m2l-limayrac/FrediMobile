@@ -27,8 +27,8 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
 
     // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
     String MyURL = "http://192.168.1.39/projets/top14server/lignes.php"; //changer l'ip par mon ip locale
-    String MyUser = "jef";
-    String MyPassword = "jefjef";
+    String MyUser = "";
+    String MyPassword = "";
     ListView myListView;
     Context myContext;
     ArrayList<LigneDeFrais> myLignes = new ArrayList<>();
@@ -40,11 +40,13 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
      *
      * @param listView la listView qui va recevoir le contenu
      */
-    public MyAsyncTask(ListView listView, Activity activity) {
+    public MyAsyncTask(ListView listView, Activity activity,String user,String mdp) {
         super();
         myListView = listView;
         myContext = listView.getContext();
         myActivity = activity;
+        MyUser = user;
+        MyPassword = mdp;
     }
 
     /**

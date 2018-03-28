@@ -6,11 +6,12 @@ package com.plot3.FrediMobile;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
-
+    public static final String EXTRA_MESSAGE = "com.plot3.FrediMobile.MESSAGE";
     // Récupère les views
     EditText myViewUser;
     EditText myViewPassword;
@@ -34,7 +35,13 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void connecter(View view) {
         Intent myIntent = new Intent(this, ListActivity.class);
+        myViewUser = (EditText) findViewById(R.id.et_user);
+        myViewPassword = (EditText) findViewById(R.id.et_password);
+        Log.d(myViewUser.getText().toString(), myViewPassword.getText().toString());
+        String chaine = myViewUser.getText().toString() + " / " + myViewPassword.getText().toString();
+        myIntent.putExtra(EXTRA_MESSAGE, chaine);
         startActivity(myIntent);
+
     }
 
 
