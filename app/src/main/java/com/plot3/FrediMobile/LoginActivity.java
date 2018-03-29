@@ -37,8 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this, ListActivity.class);
         myViewUser = (EditText) findViewById(R.id.et_user);
         myViewPassword = (EditText) findViewById(R.id.et_password);
-        Log.d(myViewUser.getText().toString(), myViewPassword.getText().toString());
-        String chaine = myViewUser.getText().toString() + " / " + myViewPassword.getText().toString();
+        String chaine = myViewUser.getText().toString() + "/" + myViewPassword.getText().toString();
+        Log.d("MonTag", chaine);
         myIntent.putExtra(EXTRA_MESSAGE, chaine);
         startActivity(myIntent);
 

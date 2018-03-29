@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,6 +39,7 @@ public class ListActivity extends AppCompatActivity {
         String[] data = chaine.split("/");
         String user = data[0];
         String mdp = data[1];
+        Log.d("monTag", user + mdp);
 
         // Récupère des infos sur l'état de la connexion Internet
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -26,7 +26,7 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
     public static final String EXTRA_MESSAGE = "com.plot3.FrediMobile.MESSAGE";
 
     // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
-    String MyURL = "http://192.168.1.39/projets/top14server/lignes.php"; //changer l'ip par mon ip locale
+    String MyURL = "http://192.168.150.64:8080/Fredy/API/login.php"; //changer l'ip par mon ip locale
     String MyUser = "";
     String MyPassword = "";
     ListView myListView;
@@ -70,6 +70,7 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
      */
     @Override
     protected void onPostExecute(String jsonString) {
+        Log.d("JESUIS", jsonString);
         super.onPostExecute(jsonString);
 
         // Interprète le contenu JSON pour récupérer le token
@@ -77,16 +78,14 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
             try {
                 // Récupère le contenu du fichier JSON
                 JSONObject jsonObject = new JSONObject(jsonString);
-                String message = jsonObject.getString("message");
-                Log.d(MainActivity.LOG_TAG, "message=" + message);  // Tests seulement
                 // Récupère la liste des clubs
-                JSONArray clubsArray = jsonObject.getJSONArray("clubs");
+                JSONArray lignesArray = jsonObject.getJSONArray("lesLignes");
                 // Boucle de lecture des clubs
-                for (int i = 0; i < clubsArray.length(); i++) {
-                    JSONObject NDFJsonObject = clubsArray.getJSONObject(i);
-                    LigneDeFrais LDF = new LigneDeFrais(NDFJsonObject);
+                for (int i = 0; i < lignesArray.length(); i++) {
+                    JSONObject LDFJsonObject = lignesArray.getJSONObject(i);
+                    LigneDeFrais LDF = new LigneDeFrais(LDFJsonObject);
                     myLignes.add(LDF);
-                    myArrayList.add(LDF.date);
+                    myArrayList.add(LDF.Trajet);
                 }
 
             } catch (Exception e) {
