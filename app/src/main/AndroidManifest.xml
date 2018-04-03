@@ -26,19 +26,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.plot3.FrediMobile.MainActivity" />
         </activity>
-        <activity android:name="com.plot3.FrediMobile.ListActivity" >
-            android:parentActivityName=".LoginActivity">
+        <activity android:name="com.plot3.FrediMobile.ListActivity"
+            android:parentActivityName="com.plot3.FrediMobile.LoginActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.plot3.FrediMobile.LoginActivity" />
         </activity>
-        <activity android:name="com.plot3.FrediMobile.DetailsActivity">
-            android:parentActivityName=".ListActivity">
+        <activity android:name="com.plot3.FrediMobile.DetailsActivity"
+            android:parentActivityName="com.plot3.FrediMobile.LoginActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.plot3.FrediMobile.ListActivity" />
+                android:value="com.plot3.FrediMobile.LoginActivity" />
         </activity>
     </application>
 
