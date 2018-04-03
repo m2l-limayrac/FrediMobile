@@ -26,7 +26,7 @@ public class MyAsyncTask extends AsyncTask<Void, Void, String> {
     public static final String EXTRA_MESSAGE = "com.plot3.FrediMobile.MESSAGE";
 
     // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
-    String MyURL = "http://192.168.150.64:8080/Fredy/API/login.php"; //changer l'ip par mon ip locale
+    String MyURL = "http://192.168.150.64:80/Fredy/API/login.php"; //changer l'ip par mon ip locale
     String MyUser = "";
     String MyPassword = "";
     ListView myListView;

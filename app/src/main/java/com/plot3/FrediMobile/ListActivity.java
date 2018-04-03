@@ -25,12 +25,6 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        // tests
-        myArrayList = new ArrayList<>();
-        myArrayList.add("lundi");
-        myArrayList.add("mardi");
-        myArrayList.add("mercredi");
-
         // Récupère la listView
         myListView = findViewById(R.id.lv_liste);
 
